@@ -1,0 +1,22 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}"/>
+<link rel="stylesheet" media="screen" th:href="@{/css/application.css}">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<head>
+    <meta name="viewport" content="width=devive-width, initial-scale=1.0" charset="UTF-8">
+    <title>Error Page</title>
+</head>
+<body>
+    <div class="container">
+        <div class="center">
+            <div>
+                <h2>	&#x2639; Something went wrong!</h2>
+                <h2>Our engineers are on it</h2>
+                <button class="hvr-grow"><a th:href="@{/}">HOME</a></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
