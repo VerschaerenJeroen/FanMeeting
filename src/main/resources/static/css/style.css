@@ -277,6 +277,10 @@ button a {
     display: block;
 }
 
+.margin-player h3 {
+    width: 350px;
+}
+
 .player .imgBx {
     position: relative;
     width: 100%;
