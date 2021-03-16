@@ -1,5 +1,6 @@
 package be.thomasmore.meeting.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -17,8 +18,10 @@ public class Artist {
     private Boolean saturday;
     private Boolean sunday;
     private Boolean morning;
+    private String picUrl;
+    private String musicUrl;
 
-    public Artist(int id, String artistName, String genre, Boolean monday, Boolean tuesday, Boolean wednesday, Boolean thursday, Boolean friday, Boolean saturday, Boolean sunday, Boolean morning) {
+    public Artist(int id, String artistName, String genre, Boolean monday, Boolean tuesday, Boolean wednesday, Boolean thursday, Boolean friday, Boolean saturday, Boolean sunday, Boolean morning, String picUrl, String musicUrl) {
         this.id = id;
         this.artistName = artistName;
         this.genre = genre;
@@ -30,6 +33,8 @@ public class Artist {
         this.saturday = saturday;
         this.sunday = sunday;
         this.morning = morning;
+        this.picUrl = picUrl;
+        this.musicUrl = musicUrl;
     }
 
     public Artist() {
@@ -122,5 +127,21 @@ public class Artist {
 
     public void setMorning(Boolean morning) {
         this.morning = morning;
+    }
+
+    public String getPicUrl() {
+        return picUrl;
+    }
+
+    public void setPicUrl(String picUrl) {
+        this.picUrl = picUrl;
+    }
+
+    public String getMusicUrl() {
+        return musicUrl;
+    }
+
+    public void setMusicUrl(String musicUrl) {
+        this.musicUrl = musicUrl;
     }
 }
