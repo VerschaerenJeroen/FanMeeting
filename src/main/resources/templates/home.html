@@ -21,7 +21,12 @@
         </div>
         <div class="col">
             <a class="card" th:each="artist: ${artists}"
-                 th:classappend="${(artist.getArtistName().equals('Dominic Fike') ? 'card1' : '') + (artist.getArtistName().equals('Mac Miller') ? 'card2' : '') + (artist.getArtistName().equals('Frank Ocean') ? 'card3' : '') + (artist.getArtistName().equals('Billie Eilish') ? 'card4' : '') + (artist.getArtistName().equals('5SOS') ? 'card5' : '') + (artist.getArtistName().equals('Eminem')  ? 'card6' : '')}"
+                 th:classappend="${(artist.getArtistName().equals('Dominic Fike') ? 'card1' : '') +
+                 (artist.getArtistName().equals('Mac Miller') ? 'card2' : '') +
+                 (artist.getArtistName().equals('Frank Ocean') ? 'card3' : '') +
+                 (artist.getArtistName().equals('Billie Eilish') ? 'card4' : '') +
+                 (artist.getArtistName().equals('5SOS') ? 'card5' : '') +
+                 (artist.getArtistName().equals('Eminem')  ? 'card6' : '')}"
                  th:href="@{|/artistdetails/${artist.id}|}">
                     <h5 th:text="${artist.getArtistName()}">Artist Name</h5>
             </a>
