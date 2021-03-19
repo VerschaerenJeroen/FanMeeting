@@ -320,7 +320,7 @@ VALUES (64, 'Leona', 'Targon', '../img/leona.jpg', 'Tank',
 
 insert into CHAMPION (
     ID, CHAMPION_NAME, CHAMPION_FACTION, CHAMPION_PICTURE_URL, ROLE, LORE)
-VALUES (65, 'Lillia', 'Ionia', '../img/Lillia.jpg', 'Fighter',
+VALUES (65, 'Lillia', 'Ionia', '../img/lillia.jpg', 'Fighter',
         'Intensely shy, the fae fawn Lillia skittishly wanders Ionia''s forests. Hiding just out of sight of mortals—whose mysterious natures have long captivated, but intimidated, her—Lillia hopes to discover why their dreams no longer reach the ancient Dreaming Tree. She now travels Ionia with a magical branch in hand, in an effort to find people''s unrealized dreams. Only then can Lillia herself bloom and help others untangle their fears to find the sparkle within. Eep!');
 
 insert into CHAMPION (
@@ -565,7 +565,7 @@ VALUES (113, 'Sona', 'Demacia', '../img/sona.jpg', 'Support',
 
 insert into CHAMPION (
     ID, CHAMPION_NAME, CHAMPION_FACTION, CHAMPION_PICTURE_URL, ROLE, LORE)
-VALUES (114, 'Soraka', 'Targon', '../img/Soraka.jpg', 'Support',
+VALUES (114, 'Soraka', 'Targon', '../img/soraka.jpg', 'Support',
         'A wanderer from the celestial dimensions beyond Mount Targon, Soraka gave up her immortality to protect the mortal races from their own more violent instincts. She endeavors to spread the virtues of compassion and mercy to everyone she meets—even healing those who would wish harm upon her. And, for all Soraka has seen of this world''s struggles, she still believes the people of Runeterra have yet to reach their full potential.');
 
 insert into CHAMPION (
@@ -700,7 +700,7 @@ VALUES (140, 'Warwick', 'Zaun', '../img/warwick.jpg', 'Fighter',
 
 insert into CHAMPION (
     ID, CHAMPION_NAME, CHAMPION_FACTION, CHAMPION_PICTURE_URL, ROLE, LORE)
-VALUES (141, 'Wukong', 'Ionia', '../img/Wukong.jpg', 'Fighter',
+VALUES (141, 'Wukong', 'Ionia', '../img/wukong.jpg', 'Fighter',
         'Wukong is a vastayan trickster who uses his strength, agility, and intelligence to confuse his opponents and gain the upper hand. After finding a lifelong friend in the warrior known as Master Yi, Wukong became the last student of the ancient martial art known as Wuju. Armed with an enchanted staff, Wukong seeks to prevent Ionia from falling to ruin.');
 
 insert into CHAMPION (
@@ -755,12 +755,12 @@ VALUES (151, 'Ziggs', 'Zaun', '../img/ziggs.jpg', 'Mage',
 
 insert into CHAMPION (
     ID, CHAMPION_NAME, CHAMPION_FACTION, CHAMPION_PICTURE_URL, ROLE, LORE)
-VALUES (152, 'Zilean', 'Runeterra', '../img/Zilean.jpg', 'Support',
+VALUES (152, 'Zilean', 'Runeterra', '../img/zilean.jpg', 'Support',
         'Once a powerful Icathian mage, Zilean became obsessed with the passage of time after witnessing his homeland''s destruction by the Void. Unable to spare even a minute to grieve the catastrophic loss, he called upon ancient temporal magic to divine all possible outcomes. Having become functionally immortal, Zilean now drifts through the past, present, and future, bending and warping the flow of time around him, always searching for that elusive moment that will turn back the clock and undo Icathia''s destruction.');
 
 insert into CHAMPION (
     ID, CHAMPION_NAME, CHAMPION_FACTION, CHAMPION_PICTURE_URL, ROLE, LORE)
-VALUES (153, 'Zoe', 'Targon', '../img/Zoe.jpg', 'Mage',
+VALUES (153, 'Zoe', 'Targon', '../img/zoe.jpg', 'Mage',
         'As the embodiment of mischief, imagination, and change, Zoe acts as the cosmic messenger of Targon, heralding major events that reshape worlds. Her mere presence warps the arcane mathematics governing realities, sometimes causing cataclysms without conscious effort or malice. This perhaps explains the breezy nonchalance with which Zoe approaches her duties, giving her plenty of time to focus on playing games, tricking mortals, or otherwise amusing herself. An encounter with Zoe can be joyous and life affirming, but it is always more than it appears and often extremely dangerous.');
 
 insert into CHAMPION (
