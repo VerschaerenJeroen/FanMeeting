@@ -1,21 +1,21 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}"/>
+<link rel="stylesheet" media="screen" th:href="@{/css/application.css}">
 <head>
     <meta charset="UTF-8">
     <title>Footer</title>
 </head>
 <body>
-<div class="footer" th:fragment="footer">
-    <div class="footer-heading">
-        <h2>email: verschaerenjeroen@gmail.com</h2>
+<footer class="text-center text-lg-start" th:fragment="footer">
+    <!-- Copyright -->
+    <div class="text-center p-3">
+        © 2021 Copyright: Jeroen Verschaeren
     </div>
-    <div class="footer-heading">
-        <h2>Adres: Bredepleinstraat 23</h2>
-    </div>
-    <div class="footer-heading">
-        <h2>Contact: 0032 478 68 74 27</h2>
-    </div>
-</div>
+    <!-- Copyright -->
+</footer>
 </body>
 </html>
