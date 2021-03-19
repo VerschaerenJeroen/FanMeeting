@@ -1,10 +1,23 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}"/>
 <link rel="stylesheet" media="screen" th:href="@{/css/application.css}">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('input[name=filterChampions]').change(function(){
+            $('form').submit();
+        });
+    });
+</script>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
     <title>ChampionList</title>
@@ -13,24 +26,72 @@
 
 <div th:replace="fragments/header :: header">Header</div>
 
-<div class="search">
-    test
-</div>
+<section class="container gallery">
 
+    <section class="search-bar mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h1 class="d-flex flex-column text-center">
+                        <span class="lead">CHOOSE YOUR</span>
+                        <strong>CHAMPION</strong>
+                    </h1>
+                </div>
+                <p class="text-center col-10 col-sm-10 col-md-8 col-xl-6 col-xxl-4 mx-auto" th:text="'Choose one of the ' + ${nrOfChampions} + ' to know from which faction they are and what story they have to tell.'">Head text</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <form>
+                        <div class="p-1 bg-light shadow-sm">
+                            <div class="input-group">
+                                <input type="text" id="keyword" name="keyword" th:value="${keyword}" placeholder="Search for Champions" class="form-control border-0">
+                                <label for="keyword"></label>
+                                <div class="input-group-append justify-content-center">
+                                    <button type="submit" value="filter" class="btn btn-link"><i class="fas fa-search"></i></button>
+                                </div>
+                                <div class="input-group btn-group">
+                                    <input class="btn-check" type="radio" id="champions_all" value="all" name="filterChampions" th:checked="${filterChampions == 'all'}">
+                                    <label class="btn btn-secondary" for="champions_all">ALL</label>
 
-<section class="container">
-    <div class="container-fluid">
+                                    <input class="btn-check" type="radio" id="champions_assassin" value="assassin" name="filterChampions" th:checked="${filterChampions == 'assassin'}">
+                                    <label class="btn btn-secondary" for="champions_assassin">ASSASSINS</label>
+
+                                    <input class="btn-check" type="radio" id="champions_fighter" value="fighter" name="filterChampions" th:checked="${filterChampions == 'fighter'}">
+                                    <label class="btn btn-secondary" for="champions_fighter">FIGHTERS</label>
+
+                                    <input class="btn-check" type="radio" id="champions_mage" value="mage" name="filterChampions" th:checked="${filterChampions == 'mage'}">
+                                    <label class="btn btn-secondary" for="champions_mage">MAGES</label>
+
+                                    <input class="btn-check" type="radio" id="champions_marksman" value="marksman" name="filterChampions" th:checked="${filterChampions == 'marksman'}">
+                                    <label class="btn btn-secondary" for="champions_marksman">MARKSMEN</label>
+
+                                    <input class="btn-check" type="radio" id="champions_support" value="support" name="filterChampions" th:checked="${filterChampions == 'support'}">
+                                    <label class="btn btn-secondary" for="champions_support">SUPPORTS</label>
+
+                                    <input class="btn-check" type="radio" id="champions_tank" value="tank" name="filterChampions" th:checked="${filterChampions == 'tank'}">
+                                    <label class="btn btn-secondary" for="champions_tank">TANKS</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div th:unless="${search}" class="container-fluid">
         <div class="row justify-content-left">
-            <div class="item col-lg-2 col-md-4 col-6 mb-4" th:each=" champion: ${champions}">
+            <div class="item col-lg-2 col-md-4 col-6 mb-4" th:each="champion: ${champions}">
                 <div class="box">
                     <a href="">
-                        <img class="img-fluid" th:src="@{${champion.getChampionPictureUrl()}}">
+                        <img class="img-fluid" th:src="@{${champion.getChampionPictureUrl()}}" src="" alt="">
                         <h2 class="text-uppercase text-left font-italic" th:text="${champion.getChampionName()}">Champion Name</h2>
                     </a>
                 </div>
             </div>
         </div>
     </div>
+    <p class="text-center col-10 mx-auto" th:if="${search}">No champions match the filter criteria.</p>
 </section>
 
 <div th:replace="fragments/footer :: footer">Footer</div>

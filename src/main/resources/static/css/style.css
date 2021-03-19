@@ -10,6 +10,20 @@ html {
     scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+    width: 12px;
+    background: #001B1F;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #E0B145;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6C969D;
+}
+
 body {
     background: #001B1F;
 }
@@ -300,7 +314,67 @@ body > footer {
 /*CHAMPIONLIST*/
 .list {
     background: #FEFEFF;
-    padding-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 90.2vh;
+}
+
+.search-bar {
+    position: relative;
+    width: 100%;
+}
+
+.search-bar h1 strong {
+    font-size: 3.5rem;
+}
+
+.input-group > .form-control:focus {
+    box-shadow: none;
+}
+
+.input-group > .form-control {
+    margin-right: 5px;
+}
+
+.btn-secondary {
+    color: lightgray;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    margin-top: 0.2rem;
+    font-size: 0.8rem;
+}
+
+.btn-check:active+.btn-secondary, .btn-check:checked+.btn-secondary, .btn-secondary.active, .btn-secondary:active, .show>.btn-secondary.dropdown-toggle {
+    background-color: transparent;
+    border: 0;
+    color: #001B1F;
+    box-shadow: none!important;
+}
+
+.btn-secondary:hover {
+    color: #001B1F;
+    background-color: transparent;
+
+}
+
+.btn-secondary:after {
+    display:block;
+    content: '';
+    border-bottom: solid 3px #E0B145;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+}
+
+.btn-secondary:hover:after {
+    transform: scaleX(1);
+}
+
+
+.gallery {
+    position: relative;
+    flex: 1 0 auto;
+    top: 6rem
 }
 
 .item {
@@ -341,6 +415,8 @@ body > footer {
 .list footer {
     background: #001B1F;
     color: #FEFEFF;
+    position: relative;
+    top: 6rem;
 }
 
 @media screen and (max-width: 1200px) {
@@ -366,4 +442,8 @@ body > footer {
         flex-basis: auto;
     }
 }
+
+
+
+
 
