@@ -13,22 +13,22 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <head>
     <meta charset="UTF-8">
-    <title>Champion Details</title>
+    <title>Faction Details</title>
 </head>
-<body class="championdetails d-flex flex-column min-vh-100">
+<body class="factiondetails d-flex flex-column min-vh-100">
 <div id="particles-js"></div>
 <script th:src="@{/script/particles.js}"></script>
 <script th:src="@{/script/app.js}"></script>
 
 <div th:replace="fragments/header :: header">Header</div>
 
-<section th:if="${champion}" class="container">
+<section th:if="${faction}" class="container">
     <div class="row mt-5">
         <section id="container" class="col-lg-10 mt-5">
             <div class="thumbnail"
-                 th:data-title="${champion.getChampionName()}"
-                 th:data-description="${champion.getRole()}">
-                <img class="img-fluid" th:src="@{${champion.getChampionPictureUrl()}}" src="" alt="">
+                 th:data-title="${faction.getFactionName()}"
+                 th:data-description="${faction.getAlias()}">
+                <img class="img-fluid" th:src="@{${faction.getFactionPictureUrl()}}" src="" alt="">
             </div>
         </section>
     </div>
@@ -36,23 +36,38 @@
         <div class="bigbox mt-auto">
             <div class="row">
                 <div class="prevButton col-4">
-                    <a class="btn btn-primary" th:href="@{|/championdetails/${prev}|}" href="">prev</a>
+                    <a class="btn btn-primary" th:href="@{|/factiondetails/${prev}|}" href="">prev</a>
                 </div>
                 <h2 class="col-4">Lore</h2>
                 <div class="nextButton col-4">
-                    <a class="btn btn-primary" th:href="@{|/championdetails/${next}|}" href="">next</a>
+                    <a class="btn btn-primary" th:href="@{|/factiondetails/${next}|}" href="">next</a>
                 </div>
             </div>
-            <p th:text="${champion.getLore()}"></p>
+            <p class="pb-5" th:text="${faction.getDescription()}"></p>
+            <h2 th:text="|Champions in ${faction.getFactionName()}|">Faction Name</h2>
+            <section class="container position-relative ">
+                <div th:unless="${champions.isEmpty()}" class="container-fluid">
+                    <div class="row justify-content-left">
+                        <div class="item col-lg-2 col-md-4 col-6 mb-4" th:each="champion: ${champions}">
+                            <div class="box">
+                                <a th:href="@{|/championdetails/${champion.getId()}|}" href="">
+                                    <img class="img-fluid" th:src="@{${champion.getChampionPictureUrl()}}" src="" alt="">
+                                    <h3 class="text-uppercase text-left font-italic" th:text="${champion.getChampionName()}">Champion Name</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </section>
 </section>
 
-<section th:unless="${champion}" class="container mt-auto">
+<section th:unless="${faction}" class="container mt-auto">
     <div class="box mt-auto">
         <div class="row">
             <div class="text-center mx-auto">
-                <strong>This is inplace for a future champion (Maybe)</strong>
+                <strong>Sorry that isn't a valid faction</strong>
             </div>
         </div>
     </div>

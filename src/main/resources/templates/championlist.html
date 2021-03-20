@@ -20,15 +20,15 @@
 </script>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
-    <title>ChampionList</title>
+    <title>Champion List</title>
 </head>
-<body class="list">
+<body class="championlist d-flex flex-column min-vh-100">
 
 <div th:replace="fragments/header :: header">Header</div>
 
-<section class="container gallery">
+<section class="container gallery position-relative">
 
-    <section class="search-bar mb-5">
+    <section class="position-relative w-100 mb-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 mx-auto">
@@ -83,7 +83,7 @@
         <div class="row justify-content-left">
             <div class="item col-lg-2 col-md-4 col-6 mb-4" th:each="champion: ${champions}">
                 <div class="box">
-                    <a href="">
+                    <a th:href="@{|/championdetails/${champion.getId()}|}" href="">
                         <img class="img-fluid" th:src="@{${champion.getChampionPictureUrl()}}" src="" alt="">
                         <h2 class="text-uppercase text-left font-italic" th:text="${champion.getChampionName()}">Champion Name</h2>
                     </a>
@@ -92,6 +92,7 @@
         </div>
     </div>
     <p class="text-center col-10 mx-auto" th:if="${search}">No champions match the filter criteria.</p>
+
 </section>
 
 <div th:replace="fragments/footer :: footer">Footer</div>

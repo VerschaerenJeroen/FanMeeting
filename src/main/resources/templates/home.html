@@ -29,47 +29,55 @@
         </div>
     </div>
 </header>
+<div class="custom-background">
+    <section id="about" class="about py-5">
+        <div class="row align-items-center container my-5 mx-auto">
+            <div class="text col-lg-6 col-md-6 col-12 pt-5 pb-5">
+                <div class="box p-5">
+                    <h6>LORE</h6>
+                    <h2>Champion lore and their abilities</h2>
+                    <p>The very purpose of this website is for people to learn the lore about the champions available within League of Legends world.</p>
+                </div>
+            </div>
+            <div class="img col-lg-6 col-md-6 col-12 pt-5 pb-5">
+                <img class="img-fluid" th:src="@{../img/pic1.png}" src="" alt="">
+            </div>
+        </div>
+    </section>
 
-<section id="about" class="about py-5">
-    <div class="row align-items-center container my-5 mx-auto">
-        <div class="text col-lg-6 col-md-6 col-12 pt-5 pb-5">
-            <h6>LORE</h6>
-            <h2>Champion lore and their abilities</h2>
-            <p>The very purpose of this website is for people to learn the lore about the champions available within League of Legends world.</p>
+    <section id="factions" class="faction py-5">
+        <div class="row align-items-center container my-5 mx-auto">
+            <div class="img col-lg-6 col-md-6 col-12 pt-5 pb-5">
+                <img class="img-fluid" th:src="@{../img/pic2.png}" src="" alt="">
+            </div>
+            <div class="text col-lg-6 col-md-6 col-12 pt-5 pb-5">
+                <div class="box p-5">
+                    <h6>FACTIONS</h6>
+                    <h2>Champion factions</h2>
+                    <p>Which champion belongs to which faction. This category will let you explore everything where each champion belongs.</p>
+                    <a th:href="@{/factionlist}" href="#">Explore</a>
+                </div>
+            </div>
         </div>
-        <div class="img col-lg-6 col-md-6 col-12 pt-5 pb-5">
-            <img class="img-fluid" th:src="@{../img/pic1.png}" src="" alt="">
-        </div>
-    </div>
-</section>
+    </section>
 
-<section id="factions" class="faction py-5">
-    <div class="row align-items-center container my-5 mx-auto">
-        <div class="img col-lg-6 col-md-6 col-12 pt-5 pb-5">
-            <img class="img-fluid" th:src="@{../img/pic2.png}" src="" alt="">
+    <section id="champions" class="champions py-5">
+        <div class="row align-items-center container my-5 mx-auto">
+            <div class="text col-lg-6 col-md-6 col-12 pt-5 pb-5">
+                <div class="box p-5">
+                    <h6>CHAMPIONS</h6>
+                    <h2>Different kind of champions</h2>
+                    <p>Here you can search in our list of champions to see which champions all exist.</p>
+                    <a th:href="@{/championlist}" href="#">Explore</a>
+                </div>
+            </div>
+            <div class="img col-lg-6 col-md-6 col-12 pt-5 pb-5">
+                <img class="img-fluid" th:src="@{../img/pic3.png}" src="" alt="">
+            </div>
         </div>
-        <div class="text col-lg-6 col-md-6 col-12 pt-5 pb-5">
-            <h6>FACTIONS</h6>
-            <h2>Champion factions</h2>
-            <p>Which champion belongs to which faction. This category will let you explore everything where each champion belongs.</p>
-            <a href="#">Explore</a>
-        </div>
-    </div>
-</section>
+    </section>
+</div>
 
-<section id="champions" class="champions py-5">
-    <div class="row align-items-center container my-5 mx-auto">
-        <div class="text col-lg-6 col-md-6 col-12 pt-5 pb-5">
-            <h6>CHAMPIONS</h6>
-            <h2>Different kind of champions</h2>
-            <p>Here you can search in our list of champions to see which champions all exist.</p>
-            <a th:href="@{/championlist}" href="#">Explore</a>
-        </div>
-        <div class="img col-lg-6 col-md-6 col-12 pt-5 pb-5">
-            <img class="img-fluid" th:src="@{../img/pic3.png}" src="" alt="">
-        </div>
-    </div>
-</section>
 
 <div th:replace="fragments/footer :: footer">Footer</div>
 
