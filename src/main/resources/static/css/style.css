@@ -617,11 +617,27 @@ body > footer {
         width: 250px;
     }
 
-    .thumbnail::after {
-        font-size: 2.5rem;
+    .factiondetails .thumbnail::after, .championdetails .thumbnail::after {
+        font-size: 1.5rem;
     }
-    .thumbnail::before {
-        font-size: 2rem;
+    .factiondetails .thumbnail::before, .championdetails .thumbnail::before {
+        font-size: 1rem;
+    }
+
+    .factiondetails .btn-primary, .championdetails .btn-primary {
+        font-size: 1rem;
+    }
+
+    .factiondetails .bigbox h2, .championdetails .bigbox h2 {
+        font-size: 32px;
+    }
+
+    .factiondetails .bigbox p, .championdetails .bigbox p {
+        font-size: 14px;
+    }
+
+    .show-button1 button, .show-button2 button {
+        font-size: 14px;
     }
 
     .about .text h2, .error .text h2 {
@@ -638,5 +654,9 @@ body > footer {
 
     .championlist .item, .factionlist .item {
         flex-basis: auto;
+    }
+
+    footer {
+        font-size: 14px;
     }
 }
