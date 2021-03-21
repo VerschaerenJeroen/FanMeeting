@@ -15,67 +15,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
     <title>Home</title>
 </head>
-<body data-spy="scroll" data-target="#navbarSupportedContent">
-<header>
-    <div th:replace="fragments/header :: header">Header</div>
+<body class="d-flex flex-column min-vh-100" data-spy="scroll" data-target="#navbarSupportedContent">
 
-    <div class="video">
-        <video autoplay muted loop>
-            <source class="embed-responsive" th:src="@{../video/1.mp4}" src="" type="video/mp4">
-        </video>
-        <div class="title text-center">
-            <img class="center-block w-50" th:src="@{../img/logo.png}" src="" alt="">
-        </div>
+<div th:replace="fragments/header :: header">Header</div>
+
+<div class="video">
+    <video autoplay muted loop>
+        <source class="embed-responsive" th:src="@{../video/1.mp4}" src="" type="video/mp4">
+    </video>
+    <div class="title text-center">
+        <img class="center-block w-50" th:src="@{../img/logo.png}" src="" alt="">
     </div>
-</header>
-<div class="custom-background">
-    <section id="about" class="about py-5">
-        <div class="row align-items-center container my-5 mx-auto">
-            <div class="text col-lg-6 col-md-6 col-12 pt-5 pb-5">
-                <div class="box p-5">
-                    <h6>LORE</h6>
-                    <h2>Champion lore and their abilities</h2>
-                    <p>The very purpose of this website is for people to learn the lore about the champions available within League of Legends world.</p>
-                </div>
-            </div>
-            <div class="img col-lg-6 col-md-6 col-12 pt-5 pb-5">
-                <img class="img-fluid" th:src="@{../img/pic1.png}" src="" alt="">
-            </div>
-        </div>
-    </section>
-
-    <section id="factions" class="faction py-5">
-        <div class="row align-items-center container my-5 mx-auto">
-            <div class="img col-lg-6 col-md-6 col-12 pt-5 pb-5">
-                <img class="img-fluid" th:src="@{../img/pic2.png}" src="" alt="">
-            </div>
-            <div class="text col-lg-6 col-md-6 col-12 pt-5 pb-5">
-                <div class="box p-5">
-                    <h6>FACTIONS</h6>
-                    <h2>Champion factions</h2>
-                    <p>Which champion belongs to which faction. This category will let you explore everything where each champion belongs.</p>
-                    <a th:href="@{/factionlist}" href="#">Explore</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="champions" class="champions py-5">
-        <div class="row align-items-center container my-5 mx-auto">
-            <div class="text col-lg-6 col-md-6 col-12 pt-5 pb-5">
-                <div class="box p-5">
-                    <h6>CHAMPIONS</h6>
-                    <h2>Different kind of champions</h2>
-                    <p>Here you can search in our list of champions to see which champions all exist.</p>
-                    <a th:href="@{/championlist}" href="#">Explore</a>
-                </div>
-            </div>
-            <div class="img col-lg-6 col-md-6 col-12 pt-5 pb-5">
-                <img class="img-fluid" th:src="@{../img/pic3.png}" src="" alt="">
-            </div>
-        </div>
-    </section>
 </div>
+
+<section class="carousel-container">
+    <div id="carousel-about" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div id="about"  class="about carousel-inner position-relative">
+            <div class="carousel-item active">
+                <div class="text pt-5 pb-5">
+                    <div class="box col-xl-6 col-lg-6 col-md-8 col-sm-8 col-8 p-5 mx-auto">
+                        <div>
+                            <h6>LORE</h6>
+                            <h2>Champion lore and their abilities</h2>
+                            <p>The very purpose of this website is for people to learn the lore about the champions available within League of Legends world.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="text pt-5 pb-5">
+                    <div class="box col-xl-6 col-lg-6 col-md-8 col-sm-8 col-8 p-5 mx-auto">
+                        <div>
+                            <h6>CHAMPIONS</h6>
+                            <h2>Different kind of champions</h2>
+                            <p>Here you can search in our list of champions to see which champions all exist.</p>
+                            <a th:href="@{/championlist}" href="#">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="text pt-5 pb-5">
+                    <div class="box col-xl-6 col-lg-6 col-md-8 col-sm-8 col-8 p-5 mx-auto">
+                        <div>
+                            <h6>FACTIONS</h6>
+                            <h2>Champion factions</h2>
+                            <p>Which champion belongs to which faction. This category will let you explore everything where each champion belongs.</p>
+                            <a th:href="@{/factionlist}" href="#">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-about"  data-bs-slide="prev">
+            <i class="fas fa-arrow-left" aria-hidden="true"></i>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel-about"  data-bs-slide="next">
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
 
 
 <div th:replace="fragments/footer :: footer">Footer</div>

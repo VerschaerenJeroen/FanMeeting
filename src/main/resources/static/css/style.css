@@ -13,7 +13,7 @@ html {
 
 body {
     background: rgb(108,150,157);
-    background: linear-gradient(0deg, rgba(108,150,157,1) 0%, rgba(0,27,31,1) 100%);
+    background: linear-gradient(0deg, rgba(0,27,31,1) 0%, rgba(108,150,157,1) 100%);
 }
 
 /*SCROLLBAR*/
@@ -87,7 +87,7 @@ body {
     border-radius: 30px;
 }
 
-#navbarSupportedContent > button:hover, .faction .text a:hover, .champions .text a:hover, .error .text a:hover {
+#navbarSupportedContent > button:hover, .about .text a:hover, .error .text a:hover, .show-button1 button:hover, .show-button2 button:hover{
     color: #001B1F;
     background-color: #FE654F;
     border: 1px solid #001B1F;
@@ -120,12 +120,39 @@ body {
     position: relative;
 }
 
-.custom-background  {
-    background: rgb(108,150,157);
-    background: linear-gradient(0deg, rgba(108,150,157,1) 0%, rgba(0,27,31,1) 100%);
+.carousel-container {
+    border-top: 3px outset #E0B145;
+    background-image: url("../img/pic1.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    min-height: 100vh;
 }
 
-.about .text, .faction .text , .champions .text, .error .text {
+.carousel {
+    height: 100%;
+    min-height: 450px;
+}
+
+.carousel .carousel-control-prev {
+    border-bottom: 0;
+    font-size: 40px;
+    color: #FEFEFF;
+}
+
+.carousel .carousel-control-next {
+    border-bottom: 0;
+    font-size: 40px;
+    color: #FEFEFF;
+}
+
+.about .text, .error .text {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -133,33 +160,39 @@ body {
     margin: auto;
 }
 
-.about .box, .faction .box, .champions .box {
-    background: rgba(255,255,255,0);
+.about img {
+    display: block;
+    width: 550px;
+    max-width: 100%;
+}
+
+.about .box {
+    background: rgba(0,0,0,.5);
     box-shadow: 0 5px 15px rgba(0,0,0,.5);
     border: 1px solid #FEFEFF;
 }
 
-.about .text h6, .faction .text h6, .champions .text h6, .error .text h6 {
+.about .text h6, .error .text h6 {
     color: #E0B145;
     font-weight: 800;
     font-size: 1rem;
     letter-spacing: 2px;
 }
 
-.about .text h2, .faction .text h2, .champions .text h2, .error .text h2 {
+.about .text h2, .error .text h2 {
     color: #FEFEFF;
     font-weight: 700;
     font-size: 2.7rem;
 }
 
-.about .text p, .faction .text p, .champions .text p {
+.about .text p {
     color: #FEFEFF;
     font-weight: 400;
     font-size: 1.1rem;
     letter-spacing: 1px;
 }
 
-.faction .text a, .champions .text a, .error .text a {
+.about .text a, .error .text a, .show-button1 button, .show-button2 button{
     color: #FEFEFF;
     background-color: #6C969D;
     font-weight: 600;
@@ -430,7 +463,9 @@ body > footer {
 }
 
 .championdetails .bigbox strong, .factiondetails .bigbox strong {
-    color: #FEFEFF;
+    background: -webkit-linear-gradient(#FEFEFF, #E0B145);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 48px;
     text-transform: uppercase;
 }
@@ -493,40 +528,39 @@ body > footer {
     transform: translateY(0%) scale(1);
 }
 
+.factiondetails .item, .championdetails .item {
+    flex-basis: auto;
+}
+
+/*SHOW-MORE*/
+#content {
+    display: none;
+}
+
+.show-button2 {
+    display: none;
+}
+
 /*media queries*/
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199px) {
     .item a h2 {
         font-size: 1rem;
     }
-    .item {
-        flex-basis: 20%;
+
+    .about .text h6, .error .text h6 {
+        font-size: 0.8rem;
     }
 
-    .factiondetails .item, .championdetails .item {
-        flex-basis: auto;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .item {
-        flex-basis: 20%;
+    .about .text h2, .error .text h2{
+        font-size: 2.2rem;
     }
 
-    .factiondetails .item, .championdetails .item {
-        flex-basis: auto;
+    .about .text p, .error .text p {
+        font-size: 1rem;
     }
 }
 
 @media screen and (max-width: 991px) {
-    .item a h2 {
-        font-size: 1.3rem;
-    }
-    .item {
-        flex-basis: auto;
-    }
-}
-
-@media screen and (max-width: 988px) {
     .navbar {
         padding: 1rem;
     }
@@ -543,10 +577,30 @@ body > footer {
     #navbarSupportedContent > ul > li:nth-child(n) > a {
         padding: 0.8rem 0;
     }
+
+    .item a h2 {
+        font-size: 1.3rem;
+    }
+    .championlist .item, .factionlist .item {
+        flex-basis: auto;
+    }
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 767px) {
+    .about .text h2, .error .text h2 {
+        font-size: 1.6rem;
+    }
 
+    .about .text p, .error .text p {
+        font-size: 0.9rem;
+    }
+
+    .about .text a, .error .text a {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 575px) {
     #container {
         width: 250px;
     }
@@ -556,5 +610,17 @@ body > footer {
     }
     .thumbnail::before {
         font-size: 2rem;
+    }
+
+    .about .text h2, .error .text h2 {
+        font-size: 1.1rem;
+    }
+
+    .about .text p, .error .text p {
+        font-size: 0.8rem;
+    }
+
+    .about .text a, .error .text a {
+        font-size: 0.8rem;
     }
 }
