@@ -581,16 +581,16 @@ body > footer {
     #navbarSupportedContent > ul > li:nth-child(n) > a {
         padding: 0.8rem 0;
     }
-
-    .item a h2 {
-        font-size: 1.3rem;
-    }
     .championlist .item, .factionlist .item {
         flex-basis: auto;
     }
 }
 
 @media screen and (max-width: 767px) {
+    .item a h2 {
+        font-size: 0.9rem;
+    }
+
     .about .text h2, .error .text h2 {
         font-size: 1.6rem;
     }
@@ -605,6 +605,10 @@ body > footer {
 }
 
 @media screen and (max-width: 575px) {
+    .item a h2 {
+        font-size: 0.8rem;
+    }
+
     #container {
         width: 250px;
     }
