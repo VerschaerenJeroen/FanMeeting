@@ -40,9 +40,23 @@ body {
     z-index: 1000;
 }
 
-.navbar .jm-logo {
+.navbar .navbar-brand {
     width: 50px;
-    max-width: 50px;
+    height: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+.navbar .navbar-brand .img-top {
+    display: none;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    z-index: 99;
+}
+
+.navbar .navbar-brand:hover .img-top {
+    display: inline;
 }
 
 .navbar .navbar-brand img{
@@ -79,44 +93,6 @@ body {
     border: 1px solid #001B1F;
 }
 
-/*navbar logo*/
-.jm-logo img:hover,
-.jm-logo img:focus,
-.jm-logo img:active {
-    -webkit-animation-name: buzz;
-    animation-name: buzz;
-    -webkit-animation-duration: 0.15s;
-    animation-duration: 0.15s;
-    -webkit-animation-timing-function: linear;
-    animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-}
-
-@-webkit-keyframes buzz {
-    50% {
-        -ms-transform: translateX(3px) rotate(2deg);
-        -webkit-transform: translateX(3px) rotate(2deg);
-        transform: translateX(3px) rotate(2deg);
-    }
-    100% {
-        -ms-transform: translateX(-3px) rotate(-2deg);
-        -webkit-transform: translateX(-3px) rotate(-2deg);
-        transform: translateX(-3px) rotate(-2deg);
-    }
-}
-@keyframes buzz {
-    50% {
-        -ms-transform: translateX(3px) rotate(2deg);
-        -webkit-transform: translateX(3px) rotate(2deg);
-        transform: translateX(3px) rotate(2deg);
-    }
-    100% {
-        -ms-transform: translateX(-3px) rotate(-2deg);
-        -webkit-transform: translateX(-3px) rotate(-2deg);
-        transform: translateX(-3px) rotate(-2deg);
-    }
-}
 /*home page specific*/
 .video {
     width: 100%;
@@ -261,10 +237,18 @@ body > footer {
     text-decoration: none;
 }
 
-.item a h2, .item a h3 {
+.item a h2 {
     color: #FEFEFF;
     font-weight: 400;
     font-size: 1.3rem;
+    padding-top: 0.6rem;
+    padding-left: 0.4rem;
+}
+
+.item a h3 {
+    color: #FEFEFF;
+    font-weight: 400;
+    font-size: 0.9rem;
     padding-top: 0.6rem;
     padding-left: 0.4rem;
 }
@@ -409,7 +393,7 @@ body > footer {
     background-color: transparent;
 }
 
-.championdetails .btn-primary:after, .factiondetails .btn-primary:after, #navbarSupportedContent > ul > li:nth-child(n) > a:after {
+.championdetails .btn-primary:after, .factiondetails .btn-primary:after, #navbarSupportedContent > ul > li:nth-child(n) > a:after, .navbar .navbar-brand:after {
     display:block;
     content: '';
     border-bottom: solid 3px #E0B145;
@@ -417,7 +401,7 @@ body > footer {
     transition: transform 250ms ease-in-out;
 }
 
-.championdetails .btn-primary:hover:after, .factiondetails .btn-primary:hover:after, #navbarSupportedContent > ul > li:nth-child(n) > a:hover:after {
+.championdetails .btn-primary:hover:after, .factiondetails .btn-primary:hover:after, #navbarSupportedContent > ul > li:nth-child(n) > a:hover:after, .navbar .navbar-brand:hover:after {
     transform: scaleX(1);
 }
 
@@ -517,11 +501,19 @@ body > footer {
     .item {
         flex-basis: 20%;
     }
+
+    .factiondetails .item, .championdetails .item {
+        flex-basis: auto;
+    }
 }
 
 @media screen and (min-width: 992px) {
     .item {
         flex-basis: 20%;
+    }
+
+    .factiondetails .item, .championdetails .item {
+        flex-basis: auto;
     }
 }
 
