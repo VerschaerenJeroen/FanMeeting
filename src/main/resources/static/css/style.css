@@ -1,4 +1,8 @@
 @import url('http://fonts.cdnfonts.com/css/friz-quadrata-std');
+@font-face {
+    font-family: 'Friz Quadrata Std';
+    src: url("../fonts/friz.otf"); format('opentype')
+}
 /*ALL PAGES*/
 * {
     margin: 0;
