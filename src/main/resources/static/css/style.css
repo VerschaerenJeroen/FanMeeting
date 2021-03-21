@@ -630,6 +630,14 @@ body > footer {
         font-size: 0.8rem;
     }
 
+    .about .box {
+        padding: 2rem!important;
+    }
+
+    .video .w-50 {
+        width: 75% !important;
+    }
+
     .championlist .item, .factionlist .item {
         flex-basis: auto;
     }
