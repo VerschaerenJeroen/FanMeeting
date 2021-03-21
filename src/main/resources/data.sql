@@ -80,7 +80,7 @@ insert into FACTION (
     ID, FACTION_NAME, ALIAS, DESCRIPTION, FACTION_PICTURE_URL)
 VALUES (14, 'Zaun','Polluted Undercity',
         'Zaun is a polluted undercity beneath Piltover - once united, they are now separate, symbiotic cultures. Stifled inventors often find their unorthodox research welcomed in Zaun, but reckless industry has rendered whole swathes of the city highly toxic. It is a place both supported and ruined by unchecked industry, mercantilism, and magic run amok. The pollution from the countless factories and laboratories is constantly spewed into the environment. The urban heart of the city is often choked with smog that blocks the morning sun and drains the sky of its pastels. Visitors have called the sky the ''Zaun Gray'', and describe staring up at it akin to seeing the beginnings of a cosmic disturbance. As polluted as Zaun is above-ground, its subterranean levels are far worse. All of Zaun''s runoff waste pools together in its sewers, mixing together into toxic and mysterious concoctions. Even so, thanks to a thriving black market, chemtech, and mechanical augmentation, the people still find ways to prosper.',
-        '../img/factions/Zaun.png');
+        '../img/factions/zaun.png');
 
 insert into CHAMPION (
     ID, CHAMPION_NAME, CHAMPION_FACTION, CHAMPION_PICTURE_URL, ROLE, LORE, FACTION_ID)
