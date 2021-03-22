@@ -1,4 +1,3 @@
-@import url('http://fonts.cdnfonts.com/css/friz-quadrata-std');
 @font-face {
     font-family: 'Friz Quadrata Std';
     src: url("../fonts/friz.otf"); format('opentype')
@@ -612,10 +611,10 @@ body > footer {
     }
 
     .thumbnail::after {
-        font-size: 2.5rem;
+        font-size: 1.5rem!important;
     }
     .thumbnail::before {
-        font-size: 2rem;
+        font-size: 1rem!important;
     }
 
     .about .text h2, .error .text h2 {
@@ -640,5 +639,17 @@ body > footer {
 
     .championlist .item, .factionlist .item {
         flex-basis: auto;
+    }
+
+    .championdetails .bigbox h2, .factiondetails .bigbox h2 {
+        font-size: 32px;
+    }
+
+    .championdetails .bigbox p, .factiondetails .bigbox p {
+        font-size: 14px;
+    }
+
+    .championdetails .btn-primary, .factiondetails .btn-primary {
+        font-size: 1.2rem;
     }
 }
