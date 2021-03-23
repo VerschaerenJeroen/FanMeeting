@@ -20,7 +20,7 @@
 <div th:replace="fragments/header :: header">Header</div>
 
 <section class="w-100 min-vh-100 overflow-hidden text-center d-flex flex-column overflow-hidden justify-content-center">
-    <video autoplay muted loop class="position-absolute">
+    <video autoplay muted loop playsinline class="position-absolute">
         <source class="embed-responsive" th:src="@{../video/1.mp4}" src="" type="video/mp4">
     </video>
     <div class="text-center position-relative h-100">
