@@ -19,56 +19,39 @@
 
 <div th:replace="fragments/header :: header">Header</div>
 
-<div class="video">
-    <video autoplay muted loop>
+<section class="w-100 min-vh-100 overflow-hidden text-center d-flex flex-column overflow-hidden justify-content-center">
+    <video autoplay muted loop class="position-absolute">
         <source class="embed-responsive" th:src="@{../video/1.mp4}" src="" type="video/mp4">
     </video>
-    <div class="title text-center">
+    <div class="text-center position-relative h-100">
         <img class="center-block w-50" th:src="@{../img/logo.png}" src="" alt="">
     </div>
-</div>
+</section>
 
-<section class="carousel-container">
+<section class="background1 overflow-hidden d-flex flex-column justify-content-center min-vh-100">
     <div id="carousel-about" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div id="about"  class="about carousel-inner position-relative">
+        <div id="about"  class="carousel-inner position-relative justify-content-center align-items-center text-center">
             <div class="carousel-item active">
-                <div class="text pt-5 pb-5">
-                    <div class="box col-xl-6 col-lg-6 col-md-8 col-sm-8 col-8 p-5 mx-auto">
-                        <div>
-                            <h6>LORE</h6>
-                            <h2>Champion lore and their abilities</h2>
-                            <p>The very purpose of this website is for people to learn the lore about the champions available within League of Legends world.</p>
-                        </div>
-                    </div>
+                <div class="box col-lg-6 col-8 p-5 mx-auto">
+                    <h5>LORE</h5>
+                    <h2>Champion lore and their abilities</h2>
+                    <p>The very purpose of this website is for people to learn the lore about the champions available within League of Legends world.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <div class="text pt-5 pb-5">
-                    <div class="box col-xl-6 col-lg-6 col-md-8 col-sm-8 col-8 p-5 mx-auto">
-                        <div>
-                            <h6>CHAMPIONS</h6>
-                            <h2>Different kind of champions</h2>
-                            <p>Here you can search in our list of champions to see which champions all exist.</p>
-                            <a th:href="@{/championlist}" href="#">Explore</a>
-                        </div>
-                    </div>
+                <div class="box col-lg-6 col-8 p-5 mx-auto">
+                    <h5>CHAMPIONS</h5>
+                    <h2>Different kind of champions</h2>
+                    <p>Here you can search in our list of champions to see which champions all exist.</p>
+                    <a th:href="@{/championlist}" href="#">Explore</a>
                 </div>
             </div>
             <div class="carousel-item">
-                <div class="text pt-5 pb-5">
-                    <div class="box col-xl-6 col-lg-6 col-md-8 col-sm-8 col-8 p-5 mx-auto">
-                        <div>
-                            <h6>FACTIONS</h6>
-                            <h2>Champion factions</h2>
-                            <p>Which champion belongs to which faction. This category will let you explore everything where each champion belongs.</p>
-                            <a th:href="@{/factionlist}" href="#">Explore</a>
-                        </div>
-                    </div>
+                <div class="box col-lg-6 col-8 p-5 mx-auto">
+                    <h5>FACTIONS</h5>
+                    <h2>Champion factions</h2>
+                    <p>Which champion belongs to which faction. This category will let you explore everything where each champion belongs.</p>
+                    <a th:href="@{/factionlist}" href="#">Explore</a>
                 </div>
             </div>
         </div>

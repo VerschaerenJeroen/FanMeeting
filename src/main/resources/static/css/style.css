@@ -2,7 +2,7 @@
     font-family: 'Friz Quadrata Std';
     src: url("../fonts/friz.otf"); format('opentype')
 }
-/*ALL PAGES*/
+
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +16,11 @@ html {
 
 body {
     background: rgb(108,150,157);
-    background: linear-gradient(0deg, rgba(0,27,31,1) 0%, rgba(108,150,157,1) 100%);
+    background: linear-gradient(0deg, #001B1F  0%, #6C969D 100%);
+}
+
+a {
+    text-decoration: none;
 }
 
 /*SCROLLBAR*/
@@ -90,113 +94,115 @@ body {
     border-radius: 30px;
 }
 
-#navbarSupportedContent > button:hover, .about .text a:hover, .error .text a:hover, .show-button1 button:hover, .show-button2 button:hover{
+#navbarSupportedContent > button:hover, .carousel-item .box a:hover, .error .box a:hover, .show-button1 button:hover, .show-button2 button:hover{
     color: #001B1F;
     background-color: #FE654F;
     border: 1px solid #001B1F;
 }
 
-/*home page specific*/
-.video {
-    width: 100%;
-    min-height: 100vh;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-}
-
-.video video {
+ body > section > video {
     width: 100%;
     height: 100%;
     pointer-events: none;
     object-fit: cover;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
 }
 
-.video .title {
-    position: relative;
+body .carousel {
+    height: 100%;
+    min-height: 450px;
 }
 
-.carousel-container {
+body .carousel .carousel-control-prev {
+    border-bottom: 0;
+    font-size: 40px;
+    color: #FEFEFF;
+}
+
+body .carousel .carousel-control-next {
+    border-bottom: 0;
+    font-size: 40px;
+    color: #FEFEFF;
+}
+
+body > .background1 {
     border-top: 3px solid #E0B145;
     background-image: url("../img/pic1.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    min-height: 100vh;
 }
 
-.carousel {
-    height: 100%;
-    min-height: 450px;
-}
-
-.carousel .carousel-control-prev {
-    border-bottom: 0;
-    font-size: 40px;
-    color: #FEFEFF;
-}
-
-.carousel .carousel-control-next {
-    border-bottom: 0;
-    font-size: 40px;
-    color: #FEFEFF;
-}
-
-.about .text, .error .text {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin: auto;
-}
-
-.about .box {
+body #about .box {
     background: rgba(0,0,0,.5);
     box-shadow: 0 5px 15px rgba(0,0,0,.5);
     border: 1px solid #FEFEFF;
 }
 
-.about .text h6, .error .text h6 {
+.carousel-item .box {
+    margin-top: 80px;
+}
+
+.list .col-lg-2 {
+    flex-basis: 20%;
+}
+
+.list .box, .details .box {
+    overflow: hidden;
+    background: #001B1F;
+    transition: 0.5s ease;
+}
+
+.list .box:hover, .details .box:hover{
+    transform: translateY(-10px);
+    background: #E0B145;
+    transition: 0.5s ease;
+    box-shadow: 0 20px 50px rgba(42,59,62,0.5);
+}
+
+.list .box:hover h3, .details .box:hover h3 {
+    color: #001B1F;
+}
+
+.box h2 {
+    color: #FEFEFF;
+    font-weight: 700;
+    font-size: 2.7rem;
+}
+
+ .box h3 {
+    color: #FEFEFF;
+    font-weight: 400;
+    font-size: 1rem;
+    padding-top: 0.6rem;
+    padding-left: 0.4rem;
+}
+
+.box h5 {
     color: #E0B145;
     font-weight: 800;
     font-size: 1rem;
     letter-spacing: 2px;
 }
 
-.about .text h2, .error .text h2 {
-    color: #FEFEFF;
-    font-weight: 700;
-    font-size: 2.7rem;
-}
-
-.about .text p {
+.box p {
     color: #FEFEFF;
     font-weight: 400;
     font-size: 1.1rem;
     letter-spacing: 1px;
 }
 
-.about .text a, .error .text a, .show-button1 button, .show-button2 button{
+.carousel-item .box a, .error .box a, .btn1 , .btn2 {
     color: #FEFEFF;
     background-color: #6C969D;
     font-weight: 600;
     padding: 0.6rem 1.4rem;
     border-radius: 30px;
-    text-decoration: none;
     border: 1px solid #FEFEFF;
+}
+
+.box img {
+    background: rgb(54,54,54);
+    background: radial-gradient(circle, rgba(54,54,54,1) 0%, rgba(0,0,0,1) 100%);
 }
 
 body > footer {
@@ -205,12 +211,12 @@ body > footer {
     color: #FEFEFF;
 }
 
-/*CHAMPIONLIST & FACTIONLIST*/
-.championlist, .factionlist{
+.list {
     background: lightgray;
+    padding-top: 7rem!important;
 }
 
-.championlist h1 strong, .factionlist h1 strong{
+.list h1 strong {
     font-size: 3.5rem;
 }
 
@@ -222,7 +228,7 @@ body > footer {
     margin-right: 5px;
 }
 
-.btn-secondary {
+.button {
     color: lightgray;
     background: transparent;
     border: 0;
@@ -231,19 +237,19 @@ body > footer {
     font-size: 0.8rem;
 }
 
-.btn-check:active+.btn-secondary, .btn-check:checked+.btn-secondary, .btn-secondary.active, .btn-secondary:active, .show>.btn-secondary.dropdown-toggle {
+.btn-check:active+.button, .btn-check:checked+.button{
     background-color: transparent;
     border: 0;
     color: #001B1F;
     box-shadow: none!important;
 }
 
-.btn-secondary:hover {
+.button:hover, .details .btn:hover, .details .btn:hover {
     color: #001B1F;
     background-color: transparent;
 }
 
-.btn-secondary:after {
+.button:after, #navbarSupportedContent a:after, .navbar .navbar-brand:after, .details .btn:after, .details .btn:after {
     display:block;
     content: '';
     border-bottom: solid 3px #E0B145;
@@ -251,70 +257,10 @@ body > footer {
     transition: transform 250ms ease-in-out;
 }
 
-.btn-secondary:hover:after {
+.button:hover:after, #navbarSupportedContent a:hover:after,.navbar .navbar-brand:hover:after, .details .btn:hover:after, .details .btn:hover:after {
     transform: scaleX(1);
 }
 
-.gallery {
-    top: 6rem
-}
-
-.item {
-    flex-basis: 20%;
-}
-
-.item a {
-    text-decoration: none;
-}
-
-.item a h2 {
-    color: #FEFEFF;
-    font-weight: 400;
-    font-size: 1.3rem;
-    padding-top: 0.6rem;
-    padding-left: 0.4rem;
-}
-
-.item a h3 {
-    color: #FEFEFF;
-    font-weight: 400;
-    font-size: 0.9rem;
-    padding-top: 0.6rem;
-    padding-left: 0.4rem;
-}
-
-.item .box {
-    overflow: hidden;
-    background: #001B1F;
-    transition: 0.5s ease;
-}
-
-.item .box:hover {
-    transform: translateY(-10px);
-    color: #001B1F;
-    background: #E0B145;
-    transition: 0.5s ease;
-    box-shadow: 0 20px 50px rgba(42,59,62,0.5);
-}
-
-.item .box:hover h2, .item .box:hover h3 {
-    color: #001B1F;
-    text-decoration: none;
-}
-
-.item .box img {
-    background: rgb(54,54,54);
-    background: radial-gradient(circle, rgba(54,54,54,1) 0%, rgba(0,0,0,1) 100%);
-    width: 100%;
-    height: 100%;
-}
-
-.championlist footer, .factionlist footer {
-    position: relative;
-    top: 6rem;
-}
-
-/*CHAMPIONDETAILS & FACTIONDETAILS*/
 #particles-js{
     position: fixed;
     width: 100%;
@@ -330,7 +276,7 @@ body > footer {
     margin: 0 auto;
 }
 
-.championdetails .thumbnail {
+.details .thumbnail {
     -webkit-backface-visibility: hidden;
     display: inline-block;
     position: relative;
@@ -340,17 +286,19 @@ body > footer {
     box-shadow: 0 15px 50px rgba(0,0,0,.5);
     z-index: 100;
 }
-.championdetails .thumbnail img {
+
+.details .thumbnail img {
     display: block;
     width: 300px;
     max-width: 100%;
     transition: opacity .2s ease-in-out;
 }
-.championdetails .thumbnail:hover img {
+
+.details .thumbnail:hover img {
     opacity: .5;
 }
-.championdetails .thumbnail::after,
-.championdetails .thumbnail::before {
+
+.details .thumbnail::after, .details .thumbnail::before {
     position: absolute;
     z-index: 1;
     width: 100%;
@@ -358,7 +306,8 @@ body > footer {
     transition: transform .4s ease-out;
     color: #fff;
 }
-.championdetails .thumbnail::after {
+
+.details .thumbnail::after {
     content: attr(data-title);
     top: 0;
     padding-top: 55px;
@@ -369,7 +318,8 @@ body > footer {
     font-weight: 300;
     text-align: center;
 }
-.championdetails .thumbnail::before {
+
+.details .thumbnail::before {
     content: attr(data-description);
     top: 50%;
     padding: 20px;
@@ -381,18 +331,16 @@ body > footer {
     font-size: 2rem;
     text-align: center;
 }
-.championdetails .thumbnail:hover::after,
-.championdetails .thumbnail:hover::before {
+
+.details .thumbnail:hover::after, .details .thumbnail:hover::before {
     transform: translateY(0%) scale(1);
 }
 
-.championdetails #container2, .factiondetails #container2 {
+.details #container2 {
     max-width: 800px;
 }
 
-.championdetails .bigbox, .factiondetails .bigbox {
-    position: relative;
-    margin: 0 auto;
+.contentbox {
     bottom: 3rem;
     max-width: 800px;
     padding: 50px;
@@ -402,7 +350,7 @@ body > footer {
     border: 1px solid #FEFEFF;
 }
 
-.championdetails .btn-primary, .factiondetails .btn-primary {
+.details .btn {
     color: lightgray;
     background: transparent;
     border: 0;
@@ -411,55 +359,20 @@ body > footer {
     font-size: 1.5rem;
 }
 
-.btn-primary, .btn-primary, .btn-primary.active, .btn-primary:active, .show>.btn-primary.dropdown-toggle {
-    background-color: transparent;
-    border: 0;
-    color: #001B1F;
-    box-shadow: none!important;
-}
-
-.championdetails .btn-primary:hover, .factiondetails .btn-primary:hover {
-    color: #001B1F;
-    background-color: transparent;
-}
-
-.championdetails .btn-primary:after, .factiondetails .btn-primary:after, #navbarSupportedContent > ul > li:nth-child(n) > a:after, .navbar .navbar-brand:after {
-    display:block;
-    content: '';
-    border-bottom: solid 3px #E0B145;
-    transform: scaleX(0);
-    transition: transform 250ms ease-in-out;
-}
-
-.championdetails .btn-primary:hover:after, .factiondetails .btn-primary:hover:after, #navbarSupportedContent > ul > li:nth-child(n) > a:hover:after, .navbar .navbar-brand:hover:after {
-    transform: scaleX(1);
-}
-
-.championdetails .prevButton, .factiondetails .prevButton {
-    text-align: left;
-}
-
-.championdetails .nextButton, .factiondetails .nextButton {
-    text-align: right;
-}
-
-.championdetails .bigbox h2, .factiondetails .bigbox h2 {
+.contentbox h2 {
     margin: 0 0 20px;
-    padding: 0;
     font-size: 48px;
     color: #E0B145;
     text-transform: uppercase;
     text-align: center;
 }
 
-.championdetails .bigbox p, .factiondetails .bigbox p {
+.contentbox p {
     color: #FEFEFF;
-    margin: 0;
-    padding: 0;
     font-size: 18px;
 }
 
-.championdetails .bigbox strong, .factiondetails .bigbox strong {
+.contentbox strong {
     background: -webkit-linear-gradient(#FEFEFF, #E0B145);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -467,69 +380,6 @@ body > footer {
     text-transform: uppercase;
 }
 
-/*FACTIONDETAILS*/
-.factiondetails .thumbnail {
-    -webkit-backface-visibility: hidden;
-    display: inline-block;
-    position: relative;
-    margin: 0 auto;
-    overflow: hidden;
-    background: rgb(54,54,54);
-    background: radial-gradient(circle, rgba(54,54,54,1) 0%, rgba(0,0,0,1) 100%);
-    box-shadow: 0 15px 50px rgba(0,0,0,.5);
-    z-index: 100;
-}
-.factiondetails .thumbnail img {
-    display: block;
-    width: 300px;
-    max-width: 100%;
-    transition: opacity .2s ease-in-out;
-}
-.factiondetails .thumbnail:hover img {
-    opacity: .5;
-}
-.factiondetails .thumbnail::after,
-.factiondetails .thumbnail::before {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 50%;
-    transition: transform .4s ease-out;
-    color: #fff;
-}
-.factiondetails .thumbnail::after {
-    content: attr(data-title);
-    top: 0;
-    padding-top: 55px;
-    transform: translateY(-100%) scale(.8);
-    background: rgba(0,0,0,.4);
-    color: #E0B145;
-    font-size: 3rem;
-    font-weight: 300;
-    text-align: center;
-}
-.factiondetails .thumbnail::before {
-    content: attr(data-description);
-    top: 50%;
-    padding: 20px;
-    transform: translateY(100%) scale(.8);
-    background: rgba(0,11,12,.6);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    color: #E0B145;
-    font-size: 1.5rem;
-    text-align: center;
-}
-.factiondetails .thumbnail:hover::after,
-.factiondetails .thumbnail:hover::before {
-    transform: translateY(0%) scale(1);
-}
-
-.factiondetails .item, .championdetails .item {
-    flex-basis: auto;
-}
-
-/*SHOW-MORE*/
 #content {
     display: none;
 }
@@ -538,21 +388,17 @@ body > footer {
     display: none;
 }
 
-/*media queries*/
-@media screen and (max-width: 1199px) {
-    .item a h2 {
-        font-size: 1rem;
-    }
-
-    .about .text h6, .error .text h6 {
+@media screen and (max-width: 1200px){
+    .list a h2 {
+       font-size: 1rem;
+   }
+    h5 {
         font-size: 0.8rem;
     }
-
-    .about .text h2, .error .text h2{
+    .carousel-item h2, .error h2 {
         font-size: 2.2rem;
     }
-
-    .about .text p, .error .text p {
+    .carousel-item p, .error p {
         font-size: 1rem;
     }
 }
@@ -574,35 +420,31 @@ body > footer {
     #navbarSupportedContent > ul > li:nth-child(n) > a {
         padding: 0.8rem 0;
     }
-    .championlist .item, .factionlist .item {
+    .list .col-lg-2 {
         flex-basis: auto;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .item a h2 {
+    .list a h2 {
         font-size: 0.9rem;
     }
 
-    .about .text h2, .error .text h2 {
+    .carousel-item h2, .error h2 {
         font-size: 1.6rem;
     }
 
-    .about .text p, .error .text p {
+    .carousel-item p, .error p {
         font-size: 0.9rem;
     }
 
-    .about .text a, .error .text a {
+    .carousel-item a, .error a {
         font-size: 0.9rem;
-    }
-
-    .championlist .item, .factionlist .item {
-        flex-basis: auto;
     }
 }
 
 @media screen and (max-width: 575px) {
-    .item a h2 {
+    .list a h2 {
         font-size: 0.8rem;
     }
 
@@ -617,39 +459,28 @@ body > footer {
         font-size: 1rem!important;
     }
 
-    .about .text h2, .error .text h2 {
+    .carousel-item h2, .error h2 {
         font-size: 1.1rem;
     }
 
-    .about .text p, .error .text p {
+    .carousel-item p, .error p {
         font-size: 0.8rem;
     }
 
-    .about .text a, .error .text a {
+    .carousel-item a, .error a {
         font-size: 0.8rem;
     }
 
-    .about .box {
-        padding: 2rem!important;
-    }
-
-    .video .w-50 {
+     section .w-50 {
         width: 75% !important;
     }
 
-    .championlist .item, .factionlist .item {
-        flex-basis: auto;
-    }
-
-    .championdetails .bigbox h2, .factiondetails .bigbox h2 {
+    .contentbox h2 {
         font-size: 32px;
     }
 
-    .championdetails .bigbox p, .factiondetails .bigbox p {
+    .contentbox p {
         font-size: 14px;
     }
-
-    .championdetails .btn-primary, .factiondetails .btn-primary {
-        font-size: 1.2rem;
-    }
 }
+

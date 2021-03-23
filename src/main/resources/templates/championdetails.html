@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
     <title>Champion Details</title>
 </head>
-<body class="championdetails d-flex flex-column min-vh-100">
+<body class="details d-flex flex-column min-vh-100">
 <div id="particles-js"></div>
 <script th:src="@{/script/particles.js}"></script>
 <script th:src="@{/script/app.js}"></script>
@@ -34,14 +34,14 @@
         </section>
     </div>
     <section id="container2" class="align-items-center mx-auto">
-        <div class="bigbox mt-auto">
+        <div class="contentbox mt-auto position-relative">
             <div class="row">
-                <div class="prevButton col-4">
-                    <a class="btn btn-primary" th:href="@{|/championdetails/${prev}|}" href="">prev</a>
+                <div class="col-4 text-start">
+                    <a class="btn" th:href="@{|/championdetails/${prev}|}" href="">prev</a>
                 </div>
                 <h2 class="col-4">Lore</h2>
-                <div class="nextButton col-4">
-                    <a class="btn btn-primary" th:href="@{|/championdetails/${next}|}" href="">next</a>
+                <div class="col-4 text-end">
+                    <a class="btn" th:href="@{|/championdetails/${next}|}" href="">next</a>
                 </div>
             </div>
             <p class="pb-5" th:text="${champion.getLore()}"></p>
@@ -50,11 +50,11 @@
                 <section class="container position-relative ">
                     <div th:unless="${champion.getFaction().getFactionName().isEmpty()}" class="container-fluid">
                         <div class="row justify-content-left">
-                            <div class="item col-lg-4 col-md-4 col-sm-6 col-8 mx-auto mb-4">
+                            <div class="col-md-4 col-sm-6 col-8 mx-auto mb-4">
                                 <div class="box rounded-3">
                                     <a th:href="@{|/factiondetails/${champion.getFaction().getId()}|}" href="">
-                                        <img class="img-fluid" th:src="@{${champion.getFaction().getFactionPictureUrl()}}" src="" alt="">
-                                        <h3 class="text-uppercase text-left font-italic" th:text="${champion.getFaction().getFactionName()}">FAction Name</h3>
+                                        <img class="img-fluid w-100 h-100" th:src="@{${champion.getFaction().getFactionPictureUrl()}}" src="" alt="">
+                                        <h3 class="text-uppercase text-left font-italic" th:text="${champion.getFaction().getFactionName()}">Faction Name</h3>
                                     </a>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@
 </section>
 
 <section th:unless="${champion}" class="container mt-auto">
-    <div class="bigbox mt-auto">
+    <div class="contentbox mt-auto">
         <div class="row">
             <div class="text-center mx-auto">
                 <strong>This is inplace for a future champion (Maybe)</strong>

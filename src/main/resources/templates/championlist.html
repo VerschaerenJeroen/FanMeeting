@@ -21,11 +21,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
     <title>Champion List</title>
 </head>
-<body class="championlist d-flex flex-column min-vh-100">
+<body class="list d-flex flex-column min-vh-100">
 
 <div th:replace="fragments/header :: header">Header</div>
 
-<section class="container gallery position-relative">
+<section class="container position-relative mx-auto">
 
     <section class="position-relative w-100 mb-5">
         <div class="container">
@@ -36,7 +36,7 @@
                         <strong>CHAMPION</strong>
                     </h1>
                 </div>
-                <p class="text-center col-10 col-sm-10 col-md-8 col-xl-6 col-xxl-4 mx-auto" th:text="'Choose one of the ' + ${nrOfChampions} + ' to know from which faction they are and what story they have to tell.'">Head text</p>
+                <p class="text-center col-10 col-md-8 col-xl-6 col-xxl-4 mx-auto" th:text="'Choose one of the ' + ${nrOfChampions} + ' to know from which faction they are and what story they have to tell.'">Head text</p>
             </div>
             <div class="row">
                 <div class="col-lg-10 mx-auto">
@@ -50,25 +50,25 @@
                                 </div>
                                 <div class="input-group btn-group">
                                     <input class="btn-check" type="radio" id="champions_all" value="all" name="filterChampions" th:checked="${filterChampions == 'all'}">
-                                    <label class="btn btn-secondary" for="champions_all">ALL</label>
+                                    <label class="btn button" for="champions_all">ALL</label>
 
                                     <input class="btn-check" type="radio" id="champions_assassin" value="assassin" name="filterChampions" th:checked="${filterChampions == 'assassin'}">
-                                    <label class="btn btn-secondary" for="champions_assassin">ASSASSINS</label>
+                                    <label class="btn button" for="champions_assassin">ASSASSINS</label>
 
                                     <input class="btn-check" type="radio" id="champions_fighter" value="fighter" name="filterChampions" th:checked="${filterChampions == 'fighter'}">
-                                    <label class="btn btn-secondary" for="champions_fighter">FIGHTERS</label>
+                                    <label class="btn button" for="champions_fighter">FIGHTERS</label>
 
                                     <input class="btn-check" type="radio" id="champions_mage" value="mage" name="filterChampions" th:checked="${filterChampions == 'mage'}">
-                                    <label class="btn btn-secondary" for="champions_mage">MAGES</label>
+                                    <label class="btn button" for="champions_mage">MAGES</label>
 
                                     <input class="btn-check" type="radio" id="champions_marksman" value="marksman" name="filterChampions" th:checked="${filterChampions == 'marksman'}">
-                                    <label class="btn btn-secondary" for="champions_marksman">MARKSMEN</label>
+                                    <label class="btn button" for="champions_marksman">MARKSMEN</label>
 
                                     <input class="btn-check" type="radio" id="champions_support" value="support" name="filterChampions" th:checked="${filterChampions == 'support'}">
-                                    <label class="btn btn-secondary" for="champions_support">SUPPORTS</label>
+                                    <label class="btn button" for="champions_support">SUPPORTS</label>
 
                                     <input class="btn-check" type="radio" id="champions_tank" value="tank" name="filterChampions" th:checked="${filterChampions == 'tank'}">
-                                    <label class="btn btn-secondary" for="champions_tank">TANKS</label>
+                                    <label class="btn button" for="champions_tank">TANKS</label>
                                 </div>
                             </div>
                         </div>
@@ -80,11 +80,11 @@
 
     <div th:unless="${search}" class="container-fluid">
         <div class="row justify-content-left">
-            <div class="item col-lg-2 col-md-4 col-6 mb-4" th:each="champion: ${champions}">
+            <div class="col-lg-2 col-md-4 col-6 mb-4" th:each="champion: ${champions}">
                 <div class="box rounded-3">
                     <a th:href="@{|/championdetails/${champion.getId()}|}" href="">
-                        <img class="img-fluid" th:src="@{${champion.getChampionPictureUrl()}}" src="" alt="">
-                        <h2 class="text-uppercase text-left font-italic" th:text="${champion.getChampionName()}">Champion Name</h2>
+                        <img class="img-fluid w-100 h-100" th:src="@{${champion.getChampionPictureUrl()}}" src="" alt="">
+                        <h3 class="text-uppercase text-left font-italic" th:text="${champion.getChampionName()}">Champion Name</h3>
                     </a>
                 </div>
             </div>

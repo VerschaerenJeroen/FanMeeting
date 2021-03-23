@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
     <title>Faction Details</title>
 </head>
-<body class="factiondetails d-flex flex-column min-vh-100">
+<body class="details d-flex flex-column min-vh-100">
 <div id="particles-js"></div>
 <script th:src="@{/script/particles.js}"></script>
 <script th:src="@{/script/app.js}"></script>
@@ -33,14 +33,14 @@
         </section>
     </div>
     <section id="container2" class="align-items-center mx-auto">
-        <div class="bigbox mt-auto">
+        <div class="contentbox mx-auto position-relative">
             <div class="row">
-                <div class="prevButton col-4">
-                    <a class="btn btn-primary" th:href="@{|/factiondetails/${prev}|}" href="">prev</a>
+                <div class="col-4 text-start">
+                    <a class="btn" th:href="@{|/factiondetails/${prev}|}" href="">prev</a>
                 </div>
                 <h2 class="col-4">Lore</h2>
-                <div class="nextButton col-4">
-                    <a class="btn btn-primary" th:href="@{|/factiondetails/${next}|}" href="">next</a>
+                <div class=" text-end">
+                    <a class="btn" th:href="@{|/factiondetails/${next}|}" href="">next</a>
                 </div>
             </div>
             <p class="pb-5" th:text="${faction.getDescription()}"></p>
@@ -49,10 +49,10 @@
                 <section class="container position-relative ">
                     <div th:unless="${champions.isEmpty()}" class="container-fluid">
                         <div class="row justify-content-left">
-                            <div class="item col-lg-4 col-md-4 col-sm-6 col-8 mb-4 mx-auto" th:each="champion: ${champions}">
+                            <div class="col-md-4 col-sm-6 col-8 mb-4 mx-auto" th:each="champion: ${champions}">
                                 <div class="box rounded-3">
                                     <a th:href="@{|/championdetails/${champion.getId()}|}" href="">
-                                        <img class="img-fluid" th:src="@{${champion.getChampionPictureUrl()}}" src="" alt="">
+                                        <img class="img-fluid w-100 h-100" th:src="@{${champion.getChampionPictureUrl()}}" src="" alt="">
                                         <h3 class="text-uppercase text-left font-italic" th:text="${champion.getChampionName()}">Champion Name</h3>
                                     </a>
                                 </div>
@@ -72,7 +72,7 @@
 </section>
 
 <section th:unless="${faction}" class="container mt-auto">
-    <div class="bigbox mt-auto">
+    <div class="contentbox mt-auto">
         <div class="row">
             <div class="text-center mx-auto">
                 <strong>Sorry that isn't a valid faction</strong>
