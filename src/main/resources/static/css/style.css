@@ -471,12 +471,16 @@ body > footer {
         font-size: 0.8rem;
     }
 
+    .details .btn {
+        font-size: 1rem;
+    }
+
     section .w-50 {
         width: 75% !important;
     }
 
     .contentbox h2 {
-        font-size: 32px;
+        font-size: 24px;
     }
 
     .contentbox p {
