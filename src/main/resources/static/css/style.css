@@ -441,6 +441,9 @@ body > footer {
     .carousel-item a, .error a {
         font-size: 0.9rem;
     }
+    .contentbox h2 {
+        font-size: 32px;
+    }
 }
 
 @media screen and (max-width: 575px) {
