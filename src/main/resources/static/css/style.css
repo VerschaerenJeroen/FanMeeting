@@ -486,5 +486,9 @@ body > footer {
     .contentbox p {
         font-size: 14px;
     }
+
+    .btn1, .btn2 {
+        font-size: 14px;
+    }
 }
 
