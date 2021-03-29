@@ -42,7 +42,6 @@ a {
 /*navbar*/
 .navbar {
     background: rgba(0,0,0,0.5);
-    padding: 1rem 8rem;
     border-bottom: 3px outset #E0B145;
     z-index: 1000;
 }
@@ -50,7 +49,6 @@ a {
 .navbar .navbar-brand {
     width: 50px;
     height: 50px;
-    position: relative;
     display: inline-block;
 }
 
@@ -71,44 +69,31 @@ a {
 }
 
 .navbar-nav {
-    position: relative;
-    left: -25px;
+    left: 25px;
 }
 
-#navbarSupportedContent > ul > li:nth-child(n) > a {
+#navbarSupportedContent a, #navbarSupportedContent  button, .username {
     color: #FEFEFF;
     font-size: 1.1rem;
     padding: 0 0.8rem;
 }
 
-#navbarSupportedContent > ul > li:nth-child(n) > a:hover{
+#navbarSupportedContent a:hover, #navbarSupportedContent  button:hover{
     color: #E0B145;
 }
 
-#navbarSupportedContent > button {
-    display: none;
-    color: #FEFEFF;
-    background-color: #6C969D;
-    font-weight: 600;
-    padding: 0.4rem 1.4rem;
-    border-radius: 30px;
-}
 
-#navbarSupportedContent > button:hover, .carousel-item .box a:hover, .error .box a:hover, .show-button1 button:hover, .show-button2 button:hover{
+.carousel-item .box a:hover, .error .box a:hover, .show-button1 button:hover, .show-button2 button:hover {
     color: #001B1F;
     background-color: #FE654F;
     border: 1px solid #001B1F;
 }
 
 body > section > video {
-    width: 100%;
-    height: 100vh;
-    pointer-events: none;
     object-fit: cover;
 }
 
 body .carousel {
-    height: 100%;
     min-height: 450px;
 }
 
@@ -138,10 +123,6 @@ body #about .box {
     border: 1px solid #FEFEFF;
 }
 
-.carousel-item .box {
-    margin-top: 80px;
-}
-
 .list .col-lg-2 {
     flex-basis: 20%;
 }
@@ -169,12 +150,12 @@ body #about .box {
     font-size: 2.7rem;
 }
 
-.box h3 {
+.box h3, .Security {
     color: #FEFEFF;
     font-weight: 400;
     font-size: 1rem;
-    padding-top: 0.6rem;
-    padding-left: 0.4rem;
+    padding-top: 0.6rem!important;
+    padding-left: 0.4rem!important;
 }
 
 .box h5 {
@@ -191,7 +172,7 @@ body #about .box {
     letter-spacing: 1px;
 }
 
-.carousel-item .box a, .error .box a, .btn1 , .btn2 {
+.carousel-item .box a, .error .box a, .btn1, .btn2 {
     color: #FEFEFF;
     background-color: #6C969D;
     font-weight: 600;
@@ -212,8 +193,11 @@ body > footer {
 }
 
 .list {
-    background: lightgray;
-    padding-top: 7rem!important;
+    background:   lightgray;
+}
+
+.list, .edit-button, .form-container {
+    padding-top: 6rem!important;
 }
 
 .list h1 strong {
@@ -237,6 +221,7 @@ body > footer {
     font-size: 0.8rem;
 }
 
+
 .btn-check:active+.button, .btn-check:checked+.button{
     background-color: transparent;
     border: 0;
@@ -244,12 +229,12 @@ body > footer {
     box-shadow: none!important;
 }
 
-.button:hover, .details .btn:hover, .details .btn:hover {
+.button:hover, .details #container2 .btn:hover, .edit-button .btn:hover {
     color: #001B1F;
     background-color: transparent;
 }
 
-.button:after, #navbarSupportedContent a:after, .navbar .navbar-brand:after, .details .btn:after, .details .btn:after {
+.button:after, #navbarSupportedContent a:after, .navbar .navbar-brand:after, .details #container2 .btn:after, .edit-button .btn:after, #navbarSupportedContent  button:after {
     display:block;
     content: '';
     border-bottom: solid 3px #E0B145;
@@ -257,7 +242,7 @@ body > footer {
     transition: transform 250ms ease-in-out;
 }
 
-.button:hover:after, #navbarSupportedContent a:hover:after,.navbar .navbar-brand:hover:after, .details .btn:hover:after, .details .btn:hover:after {
+.button:hover:after, #navbarSupportedContent a:hover:after,.navbar .navbar-brand:hover:after, .details #container2 .btn:hover:after, .edit-button .btn:hover:after, #navbarSupportedContent  button:hover:after {
     transform: scaleX(1);
 }
 
@@ -282,7 +267,8 @@ body > footer {
     position: relative;
     margin: 0 auto;
     overflow: hidden;
-    background: #000;
+    background: rgb(54,54,54);
+    background: radial-gradient(circle, rgba(54,54,54,1) 0%, rgba(0,0,0,1) 100%);
     box-shadow: 0 15px 50px rgba(0,0,0,.5);
     z-index: 100;
 }
@@ -314,7 +300,7 @@ body > footer {
     transform: translateY(-100%) scale(.8);
     background: rgba(0,0,0,.4);
     color: #E0B145;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 300;
     text-align: center;
 }
@@ -328,7 +314,7 @@ body > footer {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     color: #E0B145;
-    font-size: 2rem;
+    font-size: 1.7rem;
     text-align: center;
 }
 
@@ -350,7 +336,7 @@ body > footer {
     border: 1px solid #FEFEFF;
 }
 
-.details .btn {
+.details #container2 .btn, .edit-button .btn {
     color: lightgray;
     background: transparent;
     border: 0;
@@ -388,17 +374,73 @@ body > footer {
     display: none;
 }
 
-@media screen and (max-width: 1200px){
-    .list a h2 {
-        font-size: 1rem;
-    }
+.champion-form label {
+    font-size: 24px;
+    color: #E0B145;
+}
+
+.champion-form .input-text, .champion-form textarea {
+    color: #FEFEFF;
+    background: transparent ;
+    display: block;
+    width: 100%;
+    height: 36px;
+    border-width: 0 0 2px 0;
+    border-color: #E0B145;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.champion-form .input-text:focus, .champion-form textarea:focus {
+    color: #FEFEFF;
+    background: transparent;
+    box-shadow: none;
+    outline: none;
+}
+
+.champion-form option {
+    background: #001B1F;
+}
+
+.error-text {
+    color: #FE654F;
+    font-size: larger;
+}
+
+.fieldError, input.fieldError {
+    border-width: 0 0 2px 0;
+    border-color: #FE654F!important;
+}
+
+.form .login {
+    border: #FEFEFF;
+    outline: none;
+    height: 50px;
+    width: 100%;
+    background-color: #001B1F;
+    color: #FEFEFF;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.form .login:hover {
+    background-color: #E0B145;
+    color: #001B1F;
+}
+
+.form .register:hover {
+    color: #FEFEFF;
+}
+
+
+@media screen and (max-width: 1199px){
     h5 {
         font-size: 0.8rem;
     }
     .carousel-item h2, .error h2 {
         font-size: 2.2rem;
     }
-    .carousel-item p, .error p {
+    .carousel-item p, .error p, .list a h2 {
         font-size: 1rem;
     }
 }
@@ -426,22 +468,15 @@ body > footer {
 }
 
 @media screen and (max-width: 767px) {
-    .list a h2 {
-        font-size: 0.9rem;
-    }
-
     .carousel-item h2, .error h2 {
         font-size: 1.6rem;
     }
 
-    .carousel-item p, .error p {
+    .carousel-item p, .error p, .carousel-item a, .error a, .list a h2 {
         font-size: 0.9rem;
     }
 
-    .carousel-item a, .error a {
-        font-size: 0.9rem;
-    }
-    .contentbox h2 {
+    .contentbox h2,.contentbox strong {
         font-size: 32px;
     }
 }
@@ -458,7 +493,7 @@ body > footer {
     .thumbnail::after {
         font-size: 1.5rem!important;
     }
-    .thumbnail::before {
+    .thumbnail::before,  .details .btn  {
         font-size: 1rem!important;
     }
 
@@ -466,16 +501,8 @@ body > footer {
         font-size: 1.1rem;
     }
 
-    .carousel-item p, .error p {
+    .carousel-item p, .error p, .carousel-item a, .error a {
         font-size: 0.8rem;
-    }
-
-    .carousel-item a, .error a {
-        font-size: 0.8rem;
-    }
-
-    .details .btn {
-        font-size: 1rem;
     }
 
     section .w-50 {
@@ -486,11 +513,7 @@ body > footer {
         font-size: 24px;
     }
 
-    .contentbox p {
-        font-size: 14px;
-    }
-
-    .btn1, .btn2 {
+    .contentbox p, .btn1, .btn2 {
         font-size: 14px;
     }
 }

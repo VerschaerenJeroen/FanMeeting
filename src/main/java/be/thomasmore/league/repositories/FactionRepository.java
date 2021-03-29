@@ -1,6 +1,5 @@
 package be.thomasmore.league.repositories;
 
-import be.thomasmore.league.model.Champion;
 import be.thomasmore.league.model.Faction;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
