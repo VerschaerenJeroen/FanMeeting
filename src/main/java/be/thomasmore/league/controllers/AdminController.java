@@ -126,19 +126,16 @@ public class AdminController {
     }
 
     @GetMapping({"/factionnew"})
-    public String factionNew(Model model,
-                              @PathVariable Integer id) {
-        logger.info("factionEdit " + id);
+    public String factionNew(Model model) {
         return "admin/factionnew";
     }
 
     @PostMapping({"/factionnew"})
     public String factionNewPost(Model model,
-                                  @PathVariable Integer id,
                                   @Valid @ModelAttribute("faction") Faction faction,
                                   BindingResult bindingResult) {
 
-        logger.info("factionEditPost " + id + " -- new name=" + faction.getFactionName());
+        logger.info( "-- new name=" + faction.getFactionName());
 
         if (bindingResult.hasErrors()) {
             return "admin/factionnew";
